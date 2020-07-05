@@ -1,0 +1,27 @@
+hex:
+var stri = '';
+for(var index = 1; index < 277; index++) {
+ if($x("/html/body/div/table/tbody/tr["+index+"]/td[2]")[0].innerText === "" || $x("/html/body/div/table/tbody/tr["+index+"]/td[4]")[0].innerText === "" || $x("/html/body/div/table/tbody/tr["+index+"]/td[16]")[0].innerText === "") {
+ continue;
+ }
+ stri += "new LegoColor(";
+ stri += $x("/html/body/div/table/tbody/tr["+index+"]/td[2]")[0].innerText + ",\"" + $x("/html/body/div/table/tbody/tr["+index+"]/td[3]")[0].innerText + "\"," + $x("/html/body/div/table/tbody/tr["+index+"]/td[4]")[0].innerText + ",\"" + $x("/html/body/div/table/tbody/tr["+index+"]/td[5]")[0].innerText + "\"," + "ColorUtils.transformColorHexToScalar(\"" + $x("/html/body/div/table/tbody/tr["+index+"]/td[16]")[0].innerText +
+ "\")";
+ stri += ", false, false);\n";
+}
+console.log(stri);
+
+
+
+rbg:
+var stri = '';
+for(var index = 1; index < 277; index++) {
+ if($x("/html/body/div/table/tbody/tr["+index+"]/td[2]")[0].innerText === "" || $x("/html/body/div/table/tbody/tr["+index+"]/td[4]")[0].innerText === "" || $x("/html/body/div/table/tbody/tr["+index+"]/td[13]")[0].innerText === "") {
+ continue;
+ }
+ stri += "new LegoColor(";
+ stri += $x("/html/body/div/table/tbody/tr["+index+"]/td[2]")[0].innerText + ",\"" + $x("/html/body/div/table/tbody/tr["+index+"]/td[3]")[0].innerText + "\"," + $x("/html/body/div/table/tbody/tr["+index+"]/td[4]")[0].innerText + ",\"" + $x("/html/body/div/table/tbody/tr["+index+"]/td[5]")[0].innerText + "\", false, false, new Scalar(" + $x("/html/body/div/table/tbody/tr["+index+"]/td[15]")[0].innerText + "," + $x("/html/body/div/table/tbody/tr["+index+"]/td[14]")[0].innerText + "," + $x("/html/body/div/table/tbody/tr["+index+"]/td[13]")[0].innerText +
+ ")";
+ stri += "),\n";
+}
+console.log(stri);
